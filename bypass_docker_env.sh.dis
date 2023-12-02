@@ -1,0 +1,11 @@
+# LABEL name="ye3tftp" version="1.0.0" author="palw3ey" maintainer="palw3ey" email="palw3ey@gmail.com" website="https://github.com/palw3ey/ye3tftp" license="MIT" create="20231202" update="20231202"
+
+# These values will override docker env variables. To activate, rename the file /etc/profile.d/bypass_docker_env.sh.dis to /etc/profile.d/bypass_docker_env.sh
+
+export Y_LANGUAGE=fr_FR
+export Y_DEBUG=no
+export Y_IP=0.0.0.0
+export Y_PORT=69
+export Y_CREATE=yes
+export Y_CHMOD=
+export Y_CHMOD_RECURSIVE=no
