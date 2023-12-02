@@ -47,7 +47,7 @@ These are the env variables and their default values.
 |Y_IP | IP address | 0.0.0.0 |
 |Y_PORT | port number | 69 |
 |Y_CREATE | yes/no | no |
-|Y_CHMOD | number | |
+|Y_CHMOD | integer permission | |
 |Y_CHMOD_RECURSIVE | yes/no | no |
 
 Y_CHMOD has no default value, this mean : *dont modify permission.* Useful number 444 or 777.
