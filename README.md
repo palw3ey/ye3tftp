@@ -8,26 +8,30 @@ The /data folder is persistent.
 
 ```bash
 docker run -dt --name mytftp -e Y_CREATE=yes -e Y_CHMOD=777 palw3ey/ye3tftp
+```
+# Test
+
+-   From the host
+
+```bash
+# create a test file :
 docker exec -it mytftp sh --login -c "echo it_works > /data/test.txt"
+
+# install a tftp client
+apt install tftp-hpa
+
+# get the test file through the tftp client
+tftp 192.168.9.150 69
+  get test.txt
+  quit
+
+# show the content of the test file
+cat test.txt
 ```
 
 # GNS3
 
 To run through GNS3, download and import the appliance : [ye3tftp.gns3a](https://raw.githubusercontent.com/palw3ey/ye3tftp/master/ye3tftp.gns3a)
-
-# Test
-
--   From an ubuntu client  
-
-```bash
-apt install tftp-hpa
-
-tftp 192.168.9.150 69
-  get test.txt
-  quit
-
-cat test.txt
-```
 
 # Environment Variables
 
