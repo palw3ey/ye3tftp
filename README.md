@@ -23,7 +23,6 @@ To run through GNS3, download and import the appliance : [ye3tftp.gns3a](https:/
 apt install tftp-hpa
 
 tftp 192.168.9.150 69
-  verbose
   get test.txt
   quit
 
