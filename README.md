@@ -17,6 +17,9 @@ docker run -dt --name mytftp -e Y_CREATE=yes -e Y_CHMOD=777 palw3ey/ye3tftp
 # create a test file :
 docker exec -it mytftp sh --login -c "echo it_works > /data/test.txt"
 
+# get container IP :
+docker inspect --format='{{.NetworkSettings.IPAddress}}' mytftp
+
 # install a tftp client
 apt install tftp-hpa
 
