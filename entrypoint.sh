@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# LABEL name="ye3tftp" version="1.0.0" author="palw3ey" maintainer="palw3ey" email="palw3ey@gmail.com" website="https://github.com/palw3ey/ye3tftp" license="MIT" create="20231202" update="20231202"
+# LABEL name="ye3tftp" version="1.0.0" author="palw3ey" maintainer="palw3ey" email="palw3ey@gmail.com" website="https://github.com/palw3ey/ye3tftp" license="MIT" create="20231202" update="20231203"
 
 # Entrypoint for docker
 
@@ -8,14 +8,6 @@
 
 vg_chmod_option=""
 vg_create_option=""
-
-# textual info, variable names are the same in i18n files
-i_apply="i_apply"
-i_enable="i_enable"
-i_ready="i_ready"
-i_recursive="i_recursive"
-i_start="i_start"
-i_with_debug_option="i_with_debug_option"
 
 # ============ [ function ] ============
 
@@ -29,6 +21,9 @@ function f_log(){
 if [[ -f /i18n/$Y_LANGUAGE.sh ]]; then
 	f_log "i18n $Y_LANGUAGE"
 	source /i18n/$Y_LANGUAGE.sh
+else
+	f_log "i18n fr_FR"
+	source /i18n/fr_FR.sh
 fi
 
 # ============ [ config ] ============
