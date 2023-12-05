@@ -4,11 +4,17 @@ A docker TFTP server based on tftp-hpa and Alpine. Light, below 10 Mb. GNS3 read
 
 The /data folder is persistent.
 
-# Quickstart
+# Simple usage
 
 ```bash
 docker run -dt --name mytftp -e Y_CREATE=yes -e Y_CHMOD=777 palw3ey/ye3tftp
 ```
+# Advanced usage
+- Map to your host port 1069
+```bash
+docker run -dt --name mytftp -p 1069:69/udp -e Y_CREATE=yes -e Y_CHMOD=777 palw3ey/ye3tftp
+```
+
 # Test
 
 -   From the host
