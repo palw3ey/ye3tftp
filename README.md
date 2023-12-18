@@ -9,11 +9,6 @@ The /data folder is persistent.
 ```bash
 docker run -dt --name mytftp -e Y_CREATE=yes -e Y_CHMOD=777 palw3ey/ye3tftp
 ```
-# Advanced usage
-- Map to your host port 1069
-```bash
-docker run -dt --name mytftp -p 1069:69/udp -e Y_CREATE=yes -e Y_CHMOD=777 palw3ey/ye3tftp
-```
 
 # Test
 
@@ -38,6 +33,18 @@ tftp 192.168.9.150 69
 cat test.txt
 ```
 
+# HOWTOs
+
+- Mount to host folder /home/tux/Downloads
+```bash
+docker run -dt --name mytftp -v /home/tux/Downloads:/data -e Y_CREATE=yes -e Y_CHMOD=777 palw3ey/ye3tftp
+```
+
+- Map to your host port 1069
+```bash
+docker run -dt --name mytftp -p 1069:69/udp -e Y_CREATE=yes -e Y_CHMOD=777 palw3ey/ye3tftp
+```
+
 # GNS3
 
 To run through GNS3, download and import the appliance : [ye3tftp.gns3a](https://raw.githubusercontent.com/palw3ey/ye3tftp/master/ye3tftp.gns3a)
@@ -46,17 +53,15 @@ To run through GNS3, download and import the appliance : [ye3tftp.gns3a](https:/
 
 These are the env variables and their default values.
 
-| variables | format | default |
-| :- |:- |:- |
-|Y_LANGUAGE | text | fr_FR |
-|Y_DEBUG | yes/no | no |
-|Y_IP | IP address | 0.0.0.0 |
-|Y_PORT | port number | 69 |
-|Y_CREATE | yes/no | no |
-|Y_CHMOD | integer permission | |
-|Y_CHMOD_RECURSIVE | yes/no | no |
-
-Y_CHMOD has no default value, this mean : *dont modify permission.* Useful number 444 or 777.
+| variables | format | default | description |
+| :- |:- |:- |:- |
+|Y_LANGUAGE | text | fr_FR | Language. The list is in the folder /i18n/ |
+|Y_DEBUG | yes/no | no | yes, Run tftpd with verbose (--verbosity 4) option |
+|Y_IP | IP address | 0.0.0.0 | IP address to listen to |
+|Y_PORT | port number | 69 | Port to listen to |
+|Y_CREATE | yes/no | no | yes, Allow new files to be created |
+|Y_CHMOD | integer permission | | chmod to apply to /data/ folder. Has no default value by default, this mean : *dont modify permission.* Useful number 444 or 777. |
+|Y_CHMOD_RECURSIVE | yes/no | no | apply chmod recursively, this mean : to all files and folder in /data/ |
 
 # Build
 
@@ -83,7 +88,7 @@ docker run -dt --name my_customized_tftp ye3tftp
 
 # ToDo
 
-- need to document env variables
+- ~~need to document env variables~~ (2023-12-18)
 - add more translation files in i18n folder. Contribute ! Send me your translations by mail ;)
 
 Don't hesitate to send me your contributions, issues, improvements on github or by mail.
