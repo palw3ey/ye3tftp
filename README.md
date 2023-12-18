@@ -35,7 +35,7 @@ cat test.txt
 
 # HOWTOs
 
-- Mount to host folder /home/tux/Downloads
+- Mount to your host folder /home/tux/Downloads
 ```bash
 docker run -dt --name mytftp -v /home/tux/Downloads:/data -e Y_CREATE=yes -e Y_CHMOD=777 palw3ey/ye3tftp
 ```
