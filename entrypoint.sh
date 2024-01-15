@@ -1,11 +1,12 @@
 #!/bin/sh
 
-# LABEL name="ye3tftp" version="1.0.0" author="palw3ey" maintainer="palw3ey" email="palw3ey@gmail.com" website="https://github.com/palw3ey/ye3tftp" license="MIT" create="20231202" update="20231203"
+# LABEL name="ye3tftp" version="1.0.0" author="palw3ey" maintainer="palw3ey" email="palw3ey@gmail.com" website="https://github.com/palw3ey/ye3tftp" license="MIT" create="20231202" update="20240115"
 
 # Entrypoint for docker
 
 # ============ [ global variable ] ============
 
+vg_name=ye3tftp
 vg_chmod_option=""
 vg_create_option=""
 
@@ -13,7 +14,7 @@ vg_create_option=""
 
 # echo information for docker logs
 function f_log(){
-  echo -e "$(date '+%Y-%m-%d %H:%M:%S') $(hostname) ye3radius: $@"
+  echo -e "$(date '+%Y-%m-%d %H:%M:%S') $(hostname) $vg_name: $@"
 }
 
 # ============ [ internationalisation ] ============
