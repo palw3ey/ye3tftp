@@ -70,6 +70,20 @@ These are the env variables and their default values.
 |Y_CHMOD | integer permission | | chmod to apply to /data/ folder. Has no default value by default, this mean : *dont modify permission.* Useful number 444 or 777. |
 |Y_CHMOD_RECURSIVE | yes/no | no | apply chmod recursively, this mean : to all files and folder in /data/ |
 
+# Compatibility
+
+The docker image was compiled to work on these CPU architectures :
+
+- linux/386
+- linux/amd64
+- linux/arm/v6
+- linux/arm/v7
+- linux/arm64
+- linux/ppc64le
+- linux/s390x
+
+Work on most computers including Raspberry Pi
+
 # Build
 
 To customize and create your own images.
@@ -92,6 +106,12 @@ docker run -dt --name my_customized_tftp ye3tftp
 |ye3tftp | 1.0.0 |
 |tftp-hpa | 5.2 |
 |alpine | 3.18.4 |
+
+
+# Changelog
+## [1.0.0] - 2023-12-02
+### Added
+- first release
 
 # ToDo
 
