@@ -105,7 +105,7 @@ docker run -dt --name my_customized_tftp ye3tftp
 | :- |:- |
 |ye3tftp | 1.0.0 |
 |tftp-hpa | 5.2 |
-|alpine | 3.18.4 |
+|alpine | 3.20.3 |
 
 
 # Changelog
