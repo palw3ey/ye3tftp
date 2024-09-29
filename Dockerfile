@@ -2,6 +2,7 @@ FROM alpine:latest
 
 MAINTAINER palw3ey <palw3ey@gmail.com>
 LABEL name="ye3tftp" version="1.0.0" author="palw3ey" maintainer="palw3ey" email="palw3ey@gmail.com" website="https://github.com/palw3ey/ye3tftp" license="MIT" create="20231202" update="20231202" description="A docker TFTP server based on tftp-hpa and Alpine. Light, below 10 Mb. GNS3 ready." usage="docker run -dt --name mytftp palw3ey/ye3tftp" tip="The folder /data is persistent"
+LABEL org.opencontainers.image.source=https://github.com/palw3ey/ye3tftp
 
 ENV Y_LANGUAGE=fr_FR \
 	Y_DEBUG=no \
